@@ -1,0 +1,22 @@
+﻿@using LiquidLeave.Models
+@model  List<LeaveApplication>
+@{
+    var apps = Model ?? new List<LeaveApplication>();
+    
+}
+
+    
+@foreach (var item in apps)
+{
+   <tr>
+       <th scope="row">@item.NumberOfDays</th>
+       <td>@item.DateFrom.ToString("d")</td>
+       <td>@item.DateTo.ToString("d")</td>
+       <td>@item.Status</td>
+       <td>@item.DateApplied.ToString("d")</td>
+       <td>@(item.DateApprovedDenied?.ToString("d"))</td>
+       <td class="comments">@item.Comments</td>
+    </tr>
+}
+
+
